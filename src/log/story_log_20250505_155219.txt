@@ -1,0 +1,54 @@
+2025-05-05 15:52:19,717 - INFO - Attempted to load environment variables from .env file.
+2025-05-05 15:52:19,717 - INFO - Gemini API Key configured successfully.
+2025-05-05 15:52:19,717 - INFO - Gemini model 'gemini-pro' initialized.
+2025-05-05 15:52:19,717 - INFO - Starting Children's Story Generator (Multi-Pass + Gemini API)...
+2025-05-05 15:52:19,717 - INFO - Collecting user preferences...
+2025-05-05 15:52:26,492 - INFO - User provided input for 'characters': 'bill the kid goat'
+2025-05-05 15:52:33,385 - INFO - User provided input for 'setting': 'underwater cave'
+2025-05-05 15:52:41,070 - INFO - User provided input for 'theme': 'lost hope'
+2025-05-05 15:52:46,055 - INFO - User provided input for 'genre': 'western'
+2025-05-05 15:52:50,339 - INFO - User provided input for 'reading_level': '6'
+2025-05-05 15:52:54,917 - INFO - User provided input for 'age_appropriate': '12'
+2025-05-05 15:52:59,061 - INFO - User provided input for 'read_aloud_time': '30'
+2025-05-05 15:53:04,171 - INFO - User provided input for 'other_details': 'none'
+2025-05-05 15:53:06,405 - INFO - User provided input for 'avoid_content': 'none'
+2025-05-05 15:53:06,406 - INFO - Final Preferences Collected: {'characters': 'bill the kid goat', 'setting': 'underwater cave', 'theme': 'lost hope', 'genre': 'western', 'reading_level': '6', 'age_appropriate': '12', 'read_aloud_time': '30', 'other_details': 'none', 'avoid_content': 'none', 'story_plan': {}, 'story_plot': {}, 'draft_story': '', 'revised_story': '', 'final_story_with_prompts': '', 'image_prompts': []}
+2025-05-05 15:53:06,406 - INFO - 
+--- Starting Multi-Pass Story Generation (with Gemini API) ---
+2025-05-05 15:53:06,406 - INFO - === PASS 1: Planning Story Elements ===
+2025-05-05 15:53:06,406 - INFO - 
+--- Calling Gemini API: Plan Story Elements ---
+2025-05-05 15:53:06,406 - INFO - PROMPT:
+------
+
+    Based on the following user preferences for a children's story, outline the key elements.
+    Provide a structured JSON response containing ONLY the JSON object, no introductory text or markdown formatting.
+
+    Preferences:
+    - Characters: bill the kid goat
+    - Setting: underwater cave
+    - Theme: lost hope
+    - Genre: western
+    - Age Appropriate: 12
+    - Other Details: none
+    - Avoid Content: none
+
+    JSON Structure:
+    {
+      "detailed_characters": "Brief descriptions focusing on traits relevant to the theme.",
+      "setting_details": "Specific sensory details or features of the setting.",
+      "key_plot_points": ["List", "of", "3-5 bullet points", "outlining core story progression."],
+      "extra_elements": "Mention how 'other_details' can be woven in."
+    }
+    
+------
+2025-05-05 15:53:06,673 - ERROR - Google API Error during 'Plan Story Elements': 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-05-05 15:53:06,674 - ERROR - No response received from API for story planning.
+2025-05-05 15:53:06,674 - CRITICAL - Story planning failed. Cannot proceed.
+2025-05-05 15:53:06,674 - INFO - === PASS 6: Finalizing Story ===
+2025-05-05 15:53:06,674 - ERROR - Cannot finalize story - no valid story content available.
+2025-05-05 15:53:06,674 - INFO - 
+Saving final story to: ./stories/story_bill_the_kid_goat_20250505_155219.md
+2025-05-05 15:53:06,674 - INFO - Story saved successfully.
+2025-05-05 15:53:06,674 - INFO - 
+Script finished.

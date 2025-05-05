@@ -1,0 +1,77 @@
+2025-05-05 15:57:17,007 - INFO - Attempted to load environment variables from .env file.
+2025-05-05 15:57:17,008 - INFO - Gemini API Key configured successfully.
+2025-05-05 15:57:17,008 - INFO - Gemini model 'gemini-1.5-flash' initialized.
+2025-05-05 15:57:17,008 - INFO - Starting Children's Story Generator (Multi-Pass + Gemini API)...
+2025-05-05 15:57:17,008 - INFO - Collecting user preferences...
+2025-05-05 15:57:18,228 - INFO - User provided no input for 'characters'. Assigned random default: 'Zara the young inventor and Bolt her robot dog'
+2025-05-05 15:57:18,370 - INFO - User provided no input for 'setting'. Assigned random default: 'a bustling city park full of secrets'
+2025-05-05 15:57:18,510 - INFO - User provided no input for 'theme'. Assigned random default: 'learning to share'
+2025-05-05 15:57:18,651 - INFO - User provided no input for 'genre'. Assigned random default: 'science fiction'
+2025-05-05 15:57:18,787 - INFO - User provided no input for 'reading_level'. Assigned random default: '2'
+2025-05-05 15:57:19,024 - INFO - User provided no input for 'age_appropriate'. Assigned random default: '3-5'
+2025-05-05 15:57:19,901 - INFO - User provided no input for 'read_aloud_time'. Assigned random default: '5'
+2025-05-05 15:57:20,349 - INFO - User provided no input for 'other_details'. Assigned random default: 'They have to build something together.'
+2025-05-05 15:57:20,858 - INFO - User provided no input for 'avoid_content'. Assigned random default: 'anything too noisy or chaotic'
+2025-05-05 15:57:20,858 - INFO - Final Preferences Collected: {'characters': 'Zara the young inventor and Bolt her robot dog', 'setting': 'a bustling city park full of secrets', 'theme': 'learning to share', 'genre': 'science fiction', 'reading_level': '2', 'age_appropriate': '3-5', 'read_aloud_time': '5', 'other_details': 'They have to build something together.', 'avoid_content': 'anything too noisy or chaotic', 'story_plan': {}, 'story_plot': {}, 'draft_story': '', 'revised_story': '', 'final_story_with_prompts': '', 'image_prompts': []}
+2025-05-05 15:57:20,858 - INFO - 
+--- Starting Multi-Pass Story Generation (with Gemini API) ---
+2025-05-05 15:57:20,859 - INFO - === PASS 1: Planning Story Elements ===
+2025-05-05 15:57:20,859 - INFO - 
+--- Calling Gemini API: Plan Story Elements ---
+2025-05-05 15:57:20,859 - INFO - PROMPT:
+------
+
+    Based on the following user preferences for a children's story, outline the key elements.
+    Provide a structured JSON response containing ONLY the JSON object, no introductory text or markdown formatting.
+
+    Preferences:
+    - Characters: Zara the young inventor and Bolt her robot dog
+    - Setting: a bustling city park full of secrets
+    - Theme: learning to share
+    - Genre: science fiction
+    - Age Appropriate: 3-5
+    - Other Details: They have to build something together.
+    - Avoid Content: anything too noisy or chaotic
+
+    JSON Structure:
+    {
+      "detailed_characters": "Brief descriptions focusing on traits relevant to the theme.",
+      "setting_details": "Specific sensory details or features of the setting.",
+      "key_plot_points": ["List", "of", "3-5 bullet points", "outlining core story progression."],
+      "extra_elements": "Mention how 'other_details' can be woven in."
+    }
+    
+------
+2025-05-05 15:57:23,533 - INFO - API RESPONSE (Text):
+-------------------
+```json
+{
+  "detailed_characters": "Zara is a curious and sometimes selfish young inventor. Bolt is a friendly and patient robot dog who loves helping Zara, even when she's not very good at sharing.",
+  "setting_details": "A sunny city park with a hidden, quiet grove of trees, a small babbling brook, and a colourful playground mostly empty in the morning, providing space for building without chaos.",
+  "key_plot_points": [
+    "Zara builds a magnificent robot bird in the park's quiet grove, but refuses to let Bolt play with it.",
+    "Another child approaches, wanting to play with the robot bird. Zara initially refuses, leading to Bolt demonstrating the joys of sharing.",
+    "Zara and Bolt have a small disagreement about who gets to use parts of the new toy, but quickly find a solution together.",
+    "They decide to build a second robot bird together, working as a team, sharing tools and ideas.",
+    "Zara and Bolt share their creation with other children, enjoying the park together in a peaceful way."
+  ],
+  "extra_elements": "The building of the robot bird acts as the central activity where Zara learns to share, incorporating the 'other details' preference organically."
+}
+```
+
+-------------------
+2025-05-05 15:57:23,533 - ERROR - Attribute error processing API response for 'Plan Story Elements': module 'google.generativeai' has no attribute 'FinishReason'
+Traceback (most recent call last):
+  File "/home/jonc/code/ai_story_generator/src/generate_ai-story_gemini3_ver5.py", line 221, in call_gemini_api
+    if candidate.finish_reason != genai.FinishReason.STOP:
+                                  ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'google.generativeai' has no attribute 'FinishReason'
+2025-05-05 15:57:23,534 - ERROR - No response received from API for story planning or API call failed.
+2025-05-05 15:57:23,534 - CRITICAL - Story planning failed. Cannot proceed.
+2025-05-05 15:57:23,534 - INFO - === PASS 6: Finalizing Story ===
+2025-05-05 15:57:23,534 - ERROR - Cannot finalize story - no valid story content available.
+2025-05-05 15:57:23,535 - INFO - 
+Saving final story to: ../stories/story_Zara_the_young_inventor_and_Bo_20250505_155717.md
+2025-05-05 15:57:23,535 - INFO - Story saved successfully.
+2025-05-05 15:57:23,535 - INFO - 
+Script finished.

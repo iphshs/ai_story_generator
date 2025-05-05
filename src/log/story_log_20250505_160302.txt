@@ -1,0 +1,306 @@
+2025-05-05 16:03:02,408 - INFO - Attempted to load environment variables from .env file.
+2025-05-05 16:03:02,409 - INFO - Gemini API Key configured successfully.
+2025-05-05 16:03:02,409 - INFO - Gemini model 'gemini-1.5-flash' initialized.
+2025-05-05 16:03:02,409 - INFO - Starting Children's Story Generator (Multi-Pass + Gemini API)...
+2025-05-05 16:03:02,409 - INFO - Collecting user preferences...
+2025-05-05 16:03:03,369 - INFO - User provided no input for 'characters'. Assigned random default: 'Lily the lost lamb and Finley the firefly'
+2025-05-05 16:03:03,513 - INFO - User provided no input for 'setting'. Assigned random default: 'a bustling city park full of secrets'
+2025-05-05 16:03:03,654 - INFO - User provided no input for 'theme'. Assigned random default: 'the joy of discovery'
+2025-05-05 16:03:04,586 - INFO - User provided no input for 'genre'. Assigned random default: 'fantasy'
+2025-05-05 16:03:05,488 - INFO - User provided no input for 'reading_level'. Assigned random default: '1'
+2025-05-05 16:03:05,784 - INFO - User provided no input for 'age_appropriate'. Assigned random default: '3-5'
+2025-05-05 16:03:06,908 - INFO - User provided input for 'read_aloud_time': '30'
+2025-05-05 16:03:07,432 - INFO - User provided no input for 'other_details'. Assigned random default: 'They have to build something together.'
+2025-05-05 16:03:07,904 - INFO - User provided no input for 'avoid_content'. Assigned random default: 'anything too noisy or chaotic'
+2025-05-05 16:03:07,905 - INFO - Final Preferences Collected: {'characters': 'Lily the lost lamb and Finley the firefly', 'setting': 'a bustling city park full of secrets', 'theme': 'the joy of discovery', 'genre': 'fantasy', 'reading_level': '1', 'age_appropriate': '3-5', 'read_aloud_time': '30', 'other_details': 'They have to build something together.', 'avoid_content': 'anything too noisy or chaotic', 'story_plan': {}, 'story_plot': {}, 'draft_story': '', 'revised_story': '', 'final_story_with_prompts': '', 'image_prompts': []}
+2025-05-05 16:03:07,905 - INFO - 
+--- Starting Multi-Pass Story Generation (with Gemini API) ---
+2025-05-05 16:03:07,905 - INFO - === PASS 1: Planning Story Elements ===
+2025-05-05 16:03:07,905 - INFO - 
+--- Calling Gemini API: Plan Story Elements ---
+2025-05-05 16:03:07,905 - INFO - PROMPT:
+------
+
+    Based on the following user preferences for a children's story, outline the key elements.
+    Provide a structured JSON response containing ONLY the JSON object, no introductory text or markdown formatting.
+
+    Preferences:
+    - Characters: Lily the lost lamb and Finley the firefly
+    - Setting: a bustling city park full of secrets
+    - Theme: the joy of discovery
+    - Genre: fantasy
+    - Age Appropriate: 3-5
+    - Other Details: They have to build something together.
+    - Avoid Content: anything too noisy or chaotic
+
+    JSON Structure:
+    {
+      "detailed_characters": "Brief descriptions focusing on traits relevant to the theme.",
+      "setting_details": "Specific sensory details or features of the setting.",
+      "key_plot_points": ["List", "of", "3-5 bullet points", "outlining core story progression."],
+      "extra_elements": "Mention how 'other_details' can be woven in."
+    }
+    
+------
+2025-05-05 16:03:10,379 - INFO - API RESPONSE (Text):
+-------------------
+```json
+{
+  "detailed_characters": "Lily is a curious and slightly clumsy lamb, always eager for adventure. Finley is a bright and inventive firefly, known for his problem-solving skills. Both are kind and friendly.",
+  "setting_details": "A twilight city park with hidden nooks, glowing fireflies, the soft rustle of leaves, and the distant, gentle sounds of a nearby fountain.  There's a small, mostly abandoned section with old, interesting-looking building blocks.",
+  "key_plot_points": [
+    "Lily gets separated from her flock and feels lost and scared in the large park.",
+    "Finley finds Lily and, despite initial fear from Lily, offers to help her find her flock.",
+    "They discover a hidden area with old building blocks and decide to build a signal tower to attract Lily's flock.",
+    "Working together, they build the tower, using Finley's light to make it visible from afar.",
+    "Lily's flock sees the tower, and she is happily reunited with them. Finley and Lily celebrate their new friendship."
+  ],
+  "extra_elements": "The building of the signal tower fulfills the 'they have to build something together' requirement.  The tower itself becomes a symbol of their shared discovery and problem-solving skills, reinforcing the theme of the joy of discovery."
+}
+```
+
+-------------------
+2025-05-05 16:03:10,379 - WARNING - API response finished with reason: 1
+2025-05-05 16:03:10,379 - INFO - Successfully parsed story plan from API response.
+2025-05-05 16:03:10,379 - INFO - === PASS 2: Plotting Narrative Outline ===
+2025-05-05 16:03:10,380 - INFO - 
+--- Calling Gemini API: Plot Narrative Outline ---
+2025-05-05 16:03:10,380 - INFO - PROMPT:
+------
+
+    Using the story plan below, create a structured narrative plot outline for a children's story (fantasy, age 3-5).
+    Provide a structured JSON response containing ONLY the JSON object, no introductory text or markdown formatting.
+
+    Story Plan:
+    {
+  "detailed_characters": "Lily is a curious and slightly clumsy lamb, always eager for adventure. Finley is a bright and inventive firefly, known for his problem-solving skills. Both are kind and friendly.",
+  "setting_details": "A twilight city park with hidden nooks, glowing fireflies, the soft rustle of leaves, and the distant, gentle sounds of a nearby fountain.  There's a small, mostly abandoned section with old, interesting-looking building blocks.",
+  "key_plot_points": [
+    "Lily gets separated from her flock and feels lost and scared in the large park.",
+    "Finley finds Lily and, despite initial fear from Lily, offers to help her find her flock.",
+    "They discover a hidden area with old building blocks and decide to build a signal tower to attract Lily's flock.",
+    "Working together, they build the tower, using Finley's light to make it visible from afar.",
+    "Lily's flock sees the tower, and she is happily reunited with them. Finley and Lily celebrate their new friendship."
+  ],
+  "extra_elements": "The building of the signal tower fulfills the 'they have to build something together' requirement.  The tower itself becomes a symbol of their shared discovery and problem-solving skills, reinforcing the theme of the joy of discovery."
+}
+
+    User Preferences Summary:
+    - Theme: the joy of discovery
+    - Characters: Lily the lost lamb and Finley the firefly
+    - Setting: a bustling city park full of secrets
+    - Read Aloud Time: ~30 mins
+
+    JSON Structure:
+    {
+      "title_suggestion": "A suitable title.",
+      "logline": "A one-sentence summary.",
+      "outline": {
+        "beginning": "Brief description of the beginning.",
+        "rising_action": "Brief description of the rising action.",
+        "climax": "Brief description of the climax.",
+        "falling_action": "Brief description of the falling action.",
+        "resolution": "Brief description of the resolution."
+      }
+    }
+    
+------
+2025-05-05 16:03:12,806 - INFO - API RESPONSE (Text):
+-------------------
+```json
+{
+  "title_suggestion": "Lily and Finley's Firefly Tower",
+  "logline": "A lost lamb and a clever firefly build a dazzling tower to reunite the lamb with her flock, discovering the joy of friendship and problem-solving along the way.",
+  "outline": {
+    "beginning": "Lily, a curious lamb, wanders away from her flock in a beautiful twilight city park, feeling scared and alone amongst the rustling leaves and gentle fountain sounds. ",
+    "rising_action": "Finley, a bright firefly, finds Lily hiding.  Lily is initially frightened but Finley reassures her with his gentle light. They stumble upon a hidden area with large, colorful building blocks. Finley suggests building a signal tower to attract Lily's flock, using his light to make it visible.",
+    "climax": "Lily and Finley work together, using the blocks to build a tall, glowing tower. Finley uses his light to make the tower shine brightly against the twilight sky.",
+    "falling_action": "Lily's flock spots the brilliantly lit tower and comes rushing to the hidden area.  Lily is overjoyed to be reunited with her family.",
+    "resolution": "Lily and Finley celebrate their new friendship. They admire their amazing tower, a symbol of their teamwork and the joy of their shared discovery, and then Finley lights the way back to her flock so Lily can say goodnight."
+  }
+}
+```
+
+-------------------
+2025-05-05 16:03:12,806 - WARNING - API response finished with reason: 1
+2025-05-05 16:03:12,807 - INFO - Successfully parsed story plot from API response.
+2025-05-05 16:03:12,807 - INFO - === PASS 3: Fleshing Out Story Draft ===
+2025-05-05 16:03:12,807 - INFO - 
+--- Calling Gemini API: Flesh Out Story ---
+2025-05-05 16:03:12,808 - INFO - PROMPT:
+------
+
+    Write the full text for a children's story based on the plot outline and elements below.
+    Return ONLY the story text, with no introductory or concluding phrases like "Here is the story:".
+
+    Target Audience: Age 3-5, Reading Level 1
+    Genre: fantasy
+    Theme: the joy of discovery
+    Approximate Length: Suitable for 30 min read-aloud.
+    Content to Avoid: anything too noisy or chaotic
+    Include: They have to build something together.
+
+    Plot Outline:
+    {
+  "title_suggestion": "Lily and Finley's Firefly Tower",
+  "logline": "A lost lamb and a clever firefly build a dazzling tower to reunite the lamb with her flock, discovering the joy of friendship and problem-solving along the way.",
+  "outline": {
+    "beginning": "Lily, a curious lamb, wanders away from her flock in a beautiful twilight city park, feeling scared and alone amongst the rustling leaves and gentle fountain sounds. ",
+    "rising_action": "Finley, a bright firefly, finds Lily hiding.  Lily is initially frightened but Finley reassures her with his gentle light. They stumble upon a hidden area with large, colorful building blocks. Finley suggests building a signal tower to attract Lily's flock, using his light to make it visible.",
+    "climax": "Lily and Finley work together, using the blocks to build a tall, glowing tower. Finley uses his light to make the tower shine brightly against the twilight sky.",
+    "falling_action": "Lily's flock spots the brilliantly lit tower and comes rushing to the hidden area.  Lily is overjoyed to be reunited with her family.",
+    "resolution": "Lily and Finley celebrate their new friendship. They admire their amazing tower, a symbol of their teamwork and the joy of their shared discovery, and then Finley lights the way back to her flock so Lily can say goodnight."
+  }
+}
+
+    Story Plan Elements:
+    {
+  "detailed_characters": "Lily is a curious and slightly clumsy lamb, always eager for adventure. Finley is a bright and inventive firefly, known for his problem-solving skills. Both are kind and friendly.",
+  "setting_details": "A twilight city park with hidden nooks, glowing fireflies, the soft rustle of leaves, and the distant, gentle sounds of a nearby fountain.  There's a small, mostly abandoned section with old, interesting-looking building blocks.",
+  "key_plot_points": [
+    "Lily gets separated from her flock and feels lost and scared in the large park.",
+    "Finley finds Lily and, despite initial fear from Lily, offers to help her find her flock.",
+    "They discover a hidden area with old building blocks and decide to build a signal tower to attract Lily's flock.",
+    "Working together, they build the tower, using Finley's light to make it visible from afar.",
+    "Lily's flock sees the tower, and she is happily reunited with them. Finley and Lily celebrate their new friendship."
+  ],
+  "extra_elements": "The building of the signal tower fulfills the 'they have to build something together' requirement.  The tower itself becomes a symbol of their shared discovery and problem-solving skills, reinforcing the theme of the joy of discovery."
+}
+
+    Write the story clearly and engagingly for young children. Ensure paragraphs are well-separated.
+    
+------
+2025-05-05 16:03:16,216 - INFO - API RESPONSE (Text):
+-------------------
+Lily the lamb was a very curious lamb.  One evening, as the sun began to set, painting the city park in pretty twilight colours, Lily wandered away from her flock.  The rustling leaves whispered secrets in the gentle breeze, and the fountain nearby chuckled softly, but Lily felt lost and a little bit scared.  She missed her fluffy friends!
+
+Suddenly, a tiny light flickered near her. It was Finley, a firefly with a bright, cheerful glow.  At first, Lily jumped! But Finley’s light was so gentle and kind, it calmed her down.  "Don't worry," Finley twinkled. "I'll help you."
+
+Finley led Lily through the whispering leaves to a hidden part of the park.  There, amongst the trees, were big, colourful building blocks!  They were old and slightly dusty, but they looked like fun.  "Let's build a tower!" Finley buzzed excitedly.  "A really tall one, so your flock can see us!"
+
+Lily, who loved building things almost as much as she loved exploring, agreed.  They worked together, carefully placing the blocks, one on top of the other.  Lily, with her soft wool, helped keep the tower steady while Finley, with his tiny legs, scampered up and down, checking everything was straight.  It was hard work, but so much fun!
+
+Finally, the tower stood tall and proud!  Then, Finley did something magical. He used his bright light to make the tower glow.  It shimmered and shone against the twilight sky, a beacon of hope for Lily.
+
+Soon, Lily saw them!  Her fluffy flock, their woolly bodies silhouetted against the darkening sky, were running towards the glowing tower.  Lily baaed with joy!  She was reunited with her family.
+
+Lily and Finley celebrated their success.  Their tower stood tall, a bright symbol of their friendship and the amazing things they could do together.  Finley, with his tiny light, guided Lily back to her flock. It was time to say goodnight.  Lily snuggled close to her family, her heart full of happiness.  She knew she'd never forget her adventure and her new friend, Finley the firefly.
+
+-------------------
+2025-05-05 16:03:16,216 - WARNING - API response finished with reason: 1
+2025-05-05 16:03:16,216 - INFO - Successfully received draft story text from API.
+2025-05-05 16:03:16,216 - INFO - === PASS 4.1: Reviewing and Revising Story ===
+2025-05-05 16:03:16,216 - INFO - 
+--- Calling Gemini API: Review and Revise Pass 1 ---
+2025-05-05 16:03:16,216 - INFO - PROMPT:
+------
+
+    Review the following children's story draft. Check for:
+    - Coherence and logical flow (beginning, middle, end).
+    - Character consistency and believability (for the context).
+    - Clear integration of the theme: 'the joy of discovery'.
+    - Age appropriateness (language, concepts) for age 3-5 / level 1.
+    - Engaging narrative style for the genre: 'fantasy'.
+    - Adherence to avoidance criteria: 'anything too noisy or chaotic'.
+    - Approximate length suitable for 30 mins.
+
+    Provide ONLY the revised version of the story text, incorporating improvements based on the review criteria. Do not include feedback commentary, just the improved story text.
+
+    Draft to Review:
+    ---
+    Lily the lamb was a very curious lamb.  One evening, as the sun began to set, painting the city park in pretty twilight colours, Lily wandered away from her flock.  The rustling leaves whispered secrets in the gentle breeze, and the fountain nearby chuckled softly, but Lily felt lost and a little bit scared.  She missed her fluffy friends!
+
+Suddenly, a tiny light flickered near her. It was Finley, a firefly with a bright, cheerful glow.  At first, Lily jumped! But Finley’s light was so gentle and kind, it calmed her down.  "Don't worry," Finley twinkled. "I'll help you."
+
+Finley led Lily through the whispering leaves to a hidden part of the park.  There, amongst the trees, were big, colourful building blocks!  They were old and slightly dusty, but they looked like fun.  "Let's build a tower!" Finley buzzed excitedly.  "A really tall one, so your flock can see us!"
+
+Lily, who loved building things almost as much as she loved exploring, agreed.  They worked together, carefully placing the blocks, one on top of the other.  Lily, with her soft wool, helped keep the tower steady while Finley, with his tiny legs, scampered up and down, checking everything was straight.  It was hard work, but so much fun!
+
+Finally, the tower stood tall and proud!  Then, Finley did something magical. He used his bright light to make the tower glow.  It shimmered and shone against the twilight sky, a beacon of hope for Lily.
+
+Soon, Lily saw them!  Her fluffy flock, their woolly bodies silhouetted against the darkening sky, were running towards the glowing tower.  Lily baaed with joy!  She was reunited with her family.
+
+Lily and Finley celebrated their success.  Their tower stood tall, a bright symbol of their friendship and the amazing things they could do together.  Finley, with his tiny light, guided Lily back to her flock. It was time to say goodnight.  Lily snuggled close to her family, her heart full of happiness.  She knew she'd never forget her adventure and her new friend, Finley the firefly.
+    ---
+    
+------
+2025-05-05 16:03:17,793 - INFO - API RESPONSE (Text):
+-------------------
+Lily the lamb loved to explore. One evening, as the sun set, painting the sky with pretty colours, Lily wandered from her flock.  She felt a little lost but wasn't scared.
+
+Suddenly, she saw a tiny light! It was Finley, a firefly, twinkling gently.  "Hello," Finley said. "Lost?"
+
+Finley guided Lily through the trees.  They found big, colorful blocks! "Let's build a tower!" Finley buzzed.
+
+Lily loved building! They worked together, carefully placing each block.  The tower grew taller and taller.  Finley’s light made it sparkle!
+
+Lily’s flock saw the sparkling tower and came running. Lily was so happy to see them!
+
+Lily and Finley smiled. Their tower shone brightly.  Finley flew Lily back to her flock.  Lily snuggled close, happy and sleepy. She'd made a new friend and built a wonderful tower!
+
+-------------------
+2025-05-05 16:03:17,794 - WARNING - API response finished with reason: 1
+2025-05-05 16:03:17,794 - INFO - Successfully received revised story text from API.
+2025-05-05 16:03:17,794 - INFO - === PASS 5: Adding Image Prompts ===
+2025-05-05 16:03:17,794 - INFO - 
+--- Calling Gemini API: Add Image Prompts ---
+2025-05-05 16:03:17,794 - INFO - PROMPT:
+------
+
+    Read the following children's story (fantasy, age 3-5).
+    Identify 3 key scenes that would benefit from an illustration (beginning, middle, end if possible).
+    Insert text-to-image prompts directly into the story text at appropriate locations.
+    The prompts should be enclosed in square brackets, like [IMAGE: description]. Ensure there is a blank line before and after each prompt.
+    The description should be concise but evocative, specifying the style (e.g., gentle illustration, cartoonish, watercolor) and key elements of the scene relevant to the story and age group.
+
+    Return ONLY the complete story text with the prompts inserted. Do not add any other commentary.
+
+    Story Text:
+    ---
+    Lily the lamb loved to explore. One evening, as the sun set, painting the sky with pretty colours, Lily wandered from her flock.  She felt a little lost but wasn't scared.
+
+Suddenly, she saw a tiny light! It was Finley, a firefly, twinkling gently.  "Hello," Finley said. "Lost?"
+
+Finley guided Lily through the trees.  They found big, colorful blocks! "Let's build a tower!" Finley buzzed.
+
+Lily loved building! They worked together, carefully placing each block.  The tower grew taller and taller.  Finley’s light made it sparkle!
+
+Lily’s flock saw the sparkling tower and came running. Lily was so happy to see them!
+
+Lily and Finley smiled. Their tower shone brightly.  Finley flew Lily back to her flock.  Lily snuggled close, happy and sleepy. She'd made a new friend and built a wonderful tower!
+    ---
+    
+------
+2025-05-05 16:03:20,094 - INFO - API RESPONSE (Text):
+-------------------
+Lily the lamb loved to explore. One evening, as the sun set, painting the sky with pretty colours, Lily wandered from her flock.  She felt a little lost but wasn't scared.
+
+[IMAGE: Gentle watercolor illustration of Lily the lamb silhouetted against a vibrant sunset, looking slightly worried but curious.  Focus on warm colors and soft light.]
+
+Suddenly, she saw a tiny light! It was Finley, a firefly, twinkling gently.  "Hello," Finley said. "Lost?"
+
+[IMAGE: Cartoonish illustration of Lily and Finley meeting.  Finley is a cheerful firefly with a bright light, and Lily is a friendly lamb with big eyes.  Use bright, playful colors.]
+
+
+Finley guided Lily through the trees.  They found big, colorful blocks! "Let's build a tower!" Finley buzzed.
+
+Lily loved building! They worked together, carefully placing each block.  The tower grew taller and taller.  Finley’s light made it sparkle!
+
+Lily’s flock saw the sparkling tower and came running. Lily was so happy to see them!
+
+[IMAGE: A bright, cheerful illustration in a playful style showing Lily and Finley's tall, colorful block tower sparkling under Finley's light, with Lily's flock running towards them. ]
+
+Lily and Finley smiled. Their tower shone brightly.  Finley flew Lily back to her flock.  Lily snuggled close, happy and sleepy. She'd made a new friend and built a wonderful tower!
+
+-------------------
+2025-05-05 16:03:20,094 - WARNING - API response finished with reason: 1
+2025-05-05 16:03:20,094 - INFO - Successfully received story with 3 image prompts from API.
+2025-05-05 16:03:20,094 - INFO - === PASS 6: Finalizing Story ===
+2025-05-05 16:03:20,094 - INFO - Final story prepared for saving.
+2025-05-05 16:03:20,094 - INFO - 
+--- Multi-Pass Story Generation Finished ---
+2025-05-05 16:03:20,094 - INFO - 
+Saving final story to: ../stories/story_Lily_the_lost_lamb_and_Finley__20250505_160302.md
+2025-05-05 16:03:20,094 - INFO - Story saved successfully.
+2025-05-05 16:03:20,094 - INFO - 
+Script finished.

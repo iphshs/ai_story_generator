@@ -1,0 +1,54 @@
+2025-05-05 15:56:22,871 - INFO - Attempted to load environment variables from .env file.
+2025-05-05 15:56:22,871 - INFO - Gemini API Key configured successfully.
+2025-05-05 15:56:22,871 - INFO - Gemini model 'gemini-pro' initialized.
+2025-05-05 15:56:22,871 - INFO - Starting Children's Story Generator (Multi-Pass + Gemini API)...
+2025-05-05 15:56:22,871 - INFO - Collecting user preferences...
+2025-05-05 15:56:25,798 - INFO - User provided no input for 'characters'. Assigned random default: 'Captain Bluejay and the Space Mice'
+2025-05-05 15:56:27,825 - INFO - User provided no input for 'setting'. Assigned random default: 'the Whispering Savannah at twilight'
+2025-05-05 15:56:29,296 - INFO - User provided no input for 'theme'. Assigned random default: 'overcoming fear of the dark'
+2025-05-05 15:56:30,398 - INFO - User provided no input for 'genre'. Assigned random default: 'gentle adventure / bedtime story'
+2025-05-05 15:56:31,112 - INFO - User provided no input for 'reading_level'. Assigned random default: 'K'
+2025-05-05 15:56:31,701 - INFO - User provided no input for 'age_appropriate'. Assigned random default: '3-5'
+2025-05-05 15:56:32,299 - INFO - User provided no input for 'read_aloud_time'. Assigned random default: '5'
+2025-05-05 15:56:32,840 - INFO - User provided no input for 'other_details'. Assigned random default: 'Include twinkling stars and friendly fireflies.'
+2025-05-05 15:56:33,545 - INFO - User provided no input for 'avoid_content'. Assigned random default: 'anything too noisy or chaotic'
+2025-05-05 15:56:33,545 - INFO - Final Preferences Collected: {'characters': 'Captain Bluejay and the Space Mice', 'setting': 'the Whispering Savannah at twilight', 'theme': 'overcoming fear of the dark', 'genre': 'gentle adventure / bedtime story', 'reading_level': 'K', 'age_appropriate': '3-5', 'read_aloud_time': '5', 'other_details': 'Include twinkling stars and friendly fireflies.', 'avoid_content': 'anything too noisy or chaotic', 'story_plan': {}, 'story_plot': {}, 'draft_story': '', 'revised_story': '', 'final_story_with_prompts': '', 'image_prompts': []}
+2025-05-05 15:56:33,545 - INFO - 
+--- Starting Multi-Pass Story Generation (with Gemini API) ---
+2025-05-05 15:56:33,545 - INFO - === PASS 1: Planning Story Elements ===
+2025-05-05 15:56:33,546 - INFO - 
+--- Calling Gemini API: Plan Story Elements ---
+2025-05-05 15:56:33,546 - INFO - PROMPT:
+------
+
+    Based on the following user preferences for a children's story, outline the key elements.
+    Provide a structured JSON response containing ONLY the JSON object, no introductory text or markdown formatting.
+
+    Preferences:
+    - Characters: Captain Bluejay and the Space Mice
+    - Setting: the Whispering Savannah at twilight
+    - Theme: overcoming fear of the dark
+    - Genre: gentle adventure / bedtime story
+    - Age Appropriate: 3-5
+    - Other Details: Include twinkling stars and friendly fireflies.
+    - Avoid Content: anything too noisy or chaotic
+
+    JSON Structure:
+    {
+      "detailed_characters": "Brief descriptions focusing on traits relevant to the theme.",
+      "setting_details": "Specific sensory details or features of the setting.",
+      "key_plot_points": ["List", "of", "3-5 bullet points", "outlining core story progression."],
+      "extra_elements": "Mention how 'other_details' can be woven in."
+    }
+    
+------
+2025-05-05 15:56:34,922 - ERROR - Google API Error during 'Plan Story Elements': 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-05-05 15:56:34,922 - ERROR - No response received from API for story planning or API call failed.
+2025-05-05 15:56:34,922 - CRITICAL - Story planning failed. Cannot proceed.
+2025-05-05 15:56:34,922 - INFO - === PASS 6: Finalizing Story ===
+2025-05-05 15:56:34,922 - ERROR - Cannot finalize story - no valid story content available.
+2025-05-05 15:56:34,922 - INFO - 
+Saving final story to: ./stories/story_Captain_Bluejay_and_the_Space__20250505_155622.md
+2025-05-05 15:56:34,922 - INFO - Story saved successfully.
+2025-05-05 15:56:34,922 - INFO - 
+Script finished.

@@ -1,0 +1,5 @@
+2025-05-05 15:49:17,595 - INFO - Attempted to load environment variables from .env file.
+2025-05-05 15:49:17,595 - INFO - Gemini API Key configured successfully.
+2025-05-05 15:49:17,595 - INFO - Gemini model 'gemini-pro' initialized.
+2025-05-05 15:49:17,595 - INFO - Starting Children's Story Generator (Multi-Pass + Gemini API)...
+2025-05-05 15:49:17,595 - CRITICAL - Gemini API appears not configured. Please ensure GOOGLE_API_KEY is set in your .env file or environment.

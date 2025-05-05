@@ -1,0 +1,298 @@
+2025-05-05 15:44:52,196 - INFO - Starting Children's Story Generator (Multi-Pass Version)...
+2025-05-05 15:44:52,196 - INFO - Collecting user preferences...
+2025-05-05 15:44:53,434 - INFO - User provided no input for 'characters'. Assigned random default: 'Lily the lost lamb and Finley the firefly'
+2025-05-05 15:44:58,555 - INFO - User provided no input for 'setting'. Assigned random default: 'a creaky old attic filled with forgotten toys'
+2025-05-05 15:45:01,172 - INFO - User provided no input for 'theme'. Assigned random default: 'overcoming fear of the dark'
+2025-05-05 15:45:03,182 - INFO - User provided no input for 'genre'. Assigned random default: 'mystery'
+2025-05-05 15:45:04,696 - INFO - User provided no input for 'reading_level'. Assigned random default: '1'
+2025-05-05 15:45:05,584 - INFO - User provided no input for 'age_appropriate'. Assigned random default: '4-6'
+2025-05-05 15:45:08,856 - INFO - User provided no input for 'read_aloud_time'. Assigned random default: '10'
+2025-05-05 15:45:12,196 - INFO - User provided no input for 'other_details'. Assigned random default: 'A funny misunderstanding happens.'
+2025-05-05 15:45:13,827 - INFO - User provided no input for 'avoid_content'. Assigned random default: 'anything too noisy or chaotic'
+2025-05-05 15:45:13,828 - INFO - Final Preferences Collected: {'characters': 'Lily the lost lamb and Finley the firefly', 'setting': 'a creaky old attic filled with forgotten toys', 'theme': 'overcoming fear of the dark', 'genre': 'mystery', 'reading_level': '1', 'age_appropriate': '4-6', 'read_aloud_time': '10', 'other_details': 'A funny misunderstanding happens.', 'avoid_content': 'anything too noisy or chaotic', 'story_plan': {}, 'story_plot': {}, 'draft_story': '', 'revised_story': '', 'final_story_with_prompts': '', 'image_prompts': []}
+2025-05-05 15:45:13,828 - INFO - 
+--- Starting Multi-Pass Story Generation ---
+2025-05-05 15:45:13,828 - INFO - === PASS 1: Planning Story Elements ===
+2025-05-05 15:45:13,828 - INFO - 
+--- Simulating Gemini Call: Plan Story Elements ---
+2025-05-05 15:45:13,829 - INFO - PROMPT:
+------
+
+    Based on the following user preferences for a children's story, outline the key elements:
+
+    Preferences:
+    - Characters: Lily the lost lamb and Finley the firefly
+    - Setting: a creaky old attic filled with forgotten toys
+    - Theme: overcoming fear of the dark
+    - Genre: mystery
+    - Age Appropriate: 4-6
+    - Other Details: A funny misunderstanding happens.
+    - Avoid Content: anything too noisy or chaotic
+
+    Provide a structured response (e.g., JSON) with:
+    - detailed_characters: Brief descriptions focusing on traits relevant to the theme.
+    - setting_details: Specific sensory details or features of the setting.
+    - key_plot_points: 3-5 bullet points outlining the core story progression.
+    - extra_elements: Mention how 'other_details' can be woven in.
+    
+------
+2025-05-05 15:45:13,829 - INFO - SIMULATED RESPONSE:
+-------------------
+Simulated Gemini Response for 'Plan Story Elements':
+{
+  "detailed_characters": "Leo: curious but timid lion cub. Sky: patient, knowledgeable owl.",
+  "setting_details": "Savannah with soft grass, acacia trees, visible constellations.",
+  "key_plot_points": [
+    "Leo is scared of shadows",
+    "Sky offers guidance",
+    "They explore together",
+    "Leo sees beauty in the night",
+    "Leo feels brave"
+  ],
+  "extra_elements": [
+    "Friendly fireflies guide the way",
+    "Stars twinkle reassuringly"
+  ]
+}
+-------------------
+2025-05-05 15:45:13,829 - INFO - Successfully parsed story plan.
+2025-05-05 15:45:13,829 - INFO - === PASS 2: Plotting Narrative Outline ===
+2025-05-05 15:45:13,829 - INFO - 
+--- Simulating Gemini Call: Plot Narrative Outline ---
+2025-05-05 15:45:13,829 - INFO - PROMPT:
+------
+
+    Using the story plan below, create a structured narrative plot outline for a children's story (mystery, age 4-6).
+
+    Story Plan:
+    {
+  "detailed_characters": "Leo: curious but timid lion cub. Sky: patient, knowledgeable owl.",
+  "setting_details": "Savannah with soft grass, acacia trees, visible constellations.",
+  "key_plot_points": [
+    "Leo is scared of shadows",
+    "Sky offers guidance",
+    "They explore together",
+    "Leo sees beauty in the night",
+    "Leo feels brave"
+  ],
+  "extra_elements": [
+    "Friendly fireflies guide the way",
+    "Stars twinkle reassuringly"
+  ]
+}
+
+    User Preferences Summary:
+    - Theme: overcoming fear of the dark
+    - Characters: Lily the lost lamb and Finley the firefly
+    - Setting: a creaky old attic filled with forgotten toys
+    - Read Aloud Time: ~10 mins
+
+    Provide a structured response (e.g., JSON) with:
+    - title_suggestion: A suitable title.
+    - logline: A one-sentence summary.
+    - outline: A dictionary with keys 'beginning', 'rising_action', 'climax', 'falling_action', 'resolution', each containing a brief description of that plot stage.
+    
+------
+2025-05-05 15:45:13,830 - INFO - SIMULATED RESPONSE:
+-------------------
+Simulated Gemini Response for 'Plot Narrative Outline':
+{
+  "title_suggestion": "Leo's Night Adventure",
+  "logline": "A timid lion cub, guided by a wise owl, learns not to fear the dark savannah night.",
+  "outline": {
+    "beginning": "Leo hides as twilight falls, expressing fear. Sky introduces herself gently.",
+    "rising_action": "Sky encourages Leo to explore. They observe nocturnal animals and fireflies. Leo shares his specific fears (shadows, noises).",
+    "climax": "A sudden noise startles Leo. Sky helps him identify it (rustling leaves) and points out the beautiful stars.",
+    "falling_action": "Leo looks at the stars, feeling calmer. He notices the fireflies' gentle light.",
+    "resolution": "Leo thanks Sky, feeling brave and no longer scared. He curls up to sleep under the stars."
+  }
+}
+-------------------
+2025-05-05 15:45:13,830 - INFO - Successfully parsed story plot.
+2025-05-05 15:45:13,830 - INFO - === PASS 3: Fleshing Out Story Draft ===
+2025-05-05 15:45:13,830 - INFO - 
+--- Simulating Gemini Call: Flesh Out Story ---
+2025-05-05 15:45:13,830 - INFO - PROMPT:
+------
+
+    Write the full text for a children's story based on the plot outline and elements below.
+
+    Target Audience: Age 4-6, Reading Level 1
+    Genre: mystery
+    Theme: overcoming fear of the dark
+    Approximate Length: Suitable for 10 min read-aloud.
+    Content to Avoid: anything too noisy or chaotic
+    Include: A funny misunderstanding happens.
+
+    Plot Outline:
+    {
+  "title_suggestion": "Leo's Night Adventure",
+  "logline": "A timid lion cub, guided by a wise owl, learns not to fear the dark savannah night.",
+  "outline": {
+    "beginning": "Leo hides as twilight falls, expressing fear. Sky introduces herself gently.",
+    "rising_action": "Sky encourages Leo to explore. They observe nocturnal animals and fireflies. Leo shares his specific fears (shadows, noises).",
+    "climax": "A sudden noise startles Leo. Sky helps him identify it (rustling leaves) and points out the beautiful stars.",
+    "falling_action": "Leo looks at the stars, feeling calmer. He notices the fireflies' gentle light.",
+    "resolution": "Leo thanks Sky, feeling brave and no longer scared. He curls up to sleep under the stars."
+  }
+}
+
+    Story Plan Elements:
+    {
+  "detailed_characters": "Leo: curious but timid lion cub. Sky: patient, knowledgeable owl.",
+  "setting_details": "Savannah with soft grass, acacia trees, visible constellations.",
+  "key_plot_points": [
+    "Leo is scared of shadows",
+    "Sky offers guidance",
+    "They explore together",
+    "Leo sees beauty in the night",
+    "Leo feels brave"
+  ],
+  "extra_elements": [
+    "Friendly fireflies guide the way",
+    "Stars twinkle reassuringly"
+  ]
+}
+
+    Write the story clearly and engagingly for young children.
+    
+------
+2025-05-05 15:45:13,830 - INFO - SIMULATED RESPONSE:
+-------------------
+Simulated Gemini Response for 'Flesh Out Story':
+Okay, here is the story draft:
+
+Leo the lion cub shivered as the sun dipped low, painting the Whispering Savannah in shades of orange and purple. Long shadows stretched from the acacia trees, looking like spooky monsters to little Leo. 'Oh dear,' he whispered, tucking his head under his paws.
+
+Suddenly, a soft 'Hoo-hoo?' came from above. Leo peeked out and saw Sky, a kind owl with big, round eyes, perched on a branch. 'What troubles you, little one?' she asked gently.
+
+'The dark! It's full of scary shapes,' Leo whimpered.
+
+Sky hooted softly. 'The night has its own beauty, Leo. Come, let's see.' Tentatively, Leo followed Sky. Tiny fireflies blinked around them like floating jewels. 'Wow,' Leo breathed. But then, a leaf rustled loudly! Leo jumped. 'It's just the wind, little lion,' Sky explained patiently. She pointed her wing upwards. 'Look!'
+
+Above them, the sky was filled with twinkling stars, like diamonds scattered on dark velvet. Leo stared, forgetting his fear. The night wasn't scary; it was beautiful and peaceful.
+
+'Thank you, Sky,' Leo yawned, feeling brave now. He found a soft patch of grass and curled up, watching the stars until he drifted off to sleep.
+-------------------
+2025-05-05 15:45:13,830 - INFO - Successfully extracted draft story text.
+2025-05-05 15:45:13,830 - INFO - === PASS 4.1: Reviewing and Revising Story ===
+2025-05-05 15:45:13,830 - INFO - 
+--- Simulating Gemini Call: Review and Revise Pass 1 ---
+2025-05-05 15:45:13,830 - INFO - PROMPT:
+------
+
+    Review the following children's story draft. Check for:
+    - Coherence and logical flow (beginning, middle, end).
+    - Character consistency and believability (for the context).
+    - Clear integration of the theme: 'overcoming fear of the dark'.
+    - Age appropriateness (language, concepts) for age 4-6 / level 1.
+    - Engaging narrative style for the genre: 'mystery'.
+    - Adherence to avoidance criteria: 'anything too noisy or chaotic'.
+    - Approximate length suitable for 10 mins.
+
+    Provide feedback and a revised version of the story addressing any issues found.
+
+    Draft to Review:
+    ---
+    Leo the lion cub shivered as the sun dipped low, painting the Whispering Savannah in shades of orange and purple. Long shadows stretched from the acacia trees, looking like spooky monsters to little Leo. 'Oh dear,' he whispered, tucking his head under his paws.
+
+Suddenly, a soft 'Hoo-hoo?' came from above. Leo peeked out and saw Sky, a kind owl with big, round eyes, perched on a branch. 'What troubles you, little one?' she asked gently.
+
+'The dark! It's full of scary shapes,' Leo whimpered.
+
+Sky hooted softly. 'The night has its own beauty, Leo. Come, let's see.' Tentatively, Leo followed Sky. Tiny fireflies blinked around them like floating jewels. 'Wow,' Leo breathed. But then, a leaf rustled loudly! Leo jumped. 'It's just the wind, little lion,' Sky explained patiently. She pointed her wing upwards. 'Look!'
+
+Above them, the sky was filled with twinkling stars, like diamonds scattered on dark velvet. Leo stared, forgetting his fear. The night wasn't scary; it was beautiful and peaceful.
+
+'Thank you, Sky,' Leo yawned, feeling brave now. He found a soft patch of grass and curled up, watching the stars until he drifted off to sleep.
+    ---
+    
+------
+2025-05-05 15:45:13,830 - INFO - SIMULATED RESPONSE:
+-------------------
+Simulated Gemini Response for 'Review and Revise Pass 1':
+Review Feedback:
+- Coherence: Good flow from fear to bravery.
+- Characters: Consistent. Leo's fear and Sky's wisdom come through.
+- Theme: 'Overcoming fear' is clear.
+- Language: Simple, suitable for K/3-5 yrs. Avoided complex words.
+- Suggestions: Maybe add one more sensory detail (e.g., smell of night flowers) during the exploration.
+
+Revised Draft (incorporating suggestion):
+
+Leo the lion cub shivered as the sun dipped low, painting the Whispering Savannah in shades of orange and purple. Long shadows stretched from the acacia trees, looking like spooky monsters to little Leo. 'Oh dear,' he whispered, tucking his head under his paws.
+
+Suddenly, a soft 'Hoo-hoo?' came from above. Leo peeked out and saw Sky, a kind owl with big, round eyes, perched on a branch. 'What troubles you, little one?' she asked gently.
+
+'The dark! It's full of scary shapes,' Leo whimpered.
+
+Sky hooted softly. 'The night has its own beauty, Leo. Come, let's see.' Tentatively, Leo followed Sky. Tiny fireflies blinked around them like floating jewels. The sweet scent of night flowers filled the air. 'Wow,' Leo breathed. But then, a leaf rustled loudly! Leo jumped. 'It's just the wind, little lion,' Sky explained patiently. She pointed her wing upwards. 'Look!'
+
+Above them, the sky was filled with twinkling stars, like diamonds scattered on dark velvet. Leo stared, forgetting his fear. The night wasn't scary; it was beautiful and peaceful.
+
+'Thank you, Sky,' Leo yawned, feeling brave now. He found a soft patch of grass and curled up, watching the stars until he drifted off to sleep.
+-------------------
+2025-05-05 15:45:13,830 - INFO - Successfully extracted revised story text.
+2025-05-05 15:45:13,831 - INFO - === PASS 5: Adding Image Prompts ===
+2025-05-05 15:45:13,831 - INFO - 
+--- Simulating Gemini Call: Add Image Prompts ---
+2025-05-05 15:45:13,831 - INFO - PROMPT:
+------
+
+    Read the following children's story (mystery, age 4-6).
+    Identify 3 key scenes that would benefit from an illustration (beginning, middle, end if possible).
+    Insert text-to-image prompts directly into the story text at appropriate locations.
+    The prompts should be enclosed in square brackets, like [IMAGE: description].
+    The description should be concise but evocative, specifying the style (e.g., gentle illustration, cartoonish, watercolor) and key elements of the scene relevant to the story and age group.
+
+    Story Text:
+    ---
+    Leo the lion cub shivered as the sun dipped low, painting the Whispering Savannah in shades of orange and purple. Long shadows stretched from the acacia trees, looking like spooky monsters to little Leo. 'Oh dear,' he whispered, tucking his head under his paws.
+
+Suddenly, a soft 'Hoo-hoo?' came from above. Leo peeked out and saw Sky, a kind owl with big, round eyes, perched on a branch. 'What troubles you, little one?' she asked gently.
+
+'The dark! It's full of scary shapes,' Leo whimpered.
+
+Sky hooted softly. 'The night has its own beauty, Leo. Come, let's see.' Tentatively, Leo followed Sky. Tiny fireflies blinked around them like floating jewels. The sweet scent of night flowers filled the air. 'Wow,' Leo breathed. But then, a leaf rustled loudly! Leo jumped. 'It's just the wind, little lion,' Sky explained patiently. She pointed her wing upwards. 'Look!'
+
+Above them, the sky was filled with twinkling stars, like diamonds scattered on dark velvet. Leo stared, forgetting his fear. The night wasn't scary; it was beautiful and peaceful.
+
+'Thank you, Sky,' Leo yawned, feeling brave now. He found a soft patch of grass and curled up, watching the stars until he drifted off to sleep.
+    ---
+
+    Return the complete story text with the prompts inserted.
+    
+------
+2025-05-05 15:45:13,831 - INFO - SIMULATED RESPONSE:
+-------------------
+Simulated Gemini Response for 'Add Image Prompts':
+Inserted 3 image prompts into the story:
+
+Leo the lion cub shivered as the sun dipped low, painting the Whispering Savannah in shades of orange and purple. Long shadows stretched from the acacia trees, looking like spooky monsters to little Leo. 'Oh dear,' he whispered, tucking his head under his paws.
+
+[IMAGE: Cute lion cub looking scared as long shadows stretch across a colorful twilight savannah. Style: gentle, warm illustration for ages 3-5.]
+
+Suddenly, a soft 'Hoo-hoo?' came from above. Leo peeked out and saw Sky, a kind owl with big, round eyes, perched on a branch. 'What troubles you, little one?' she asked gently.
+
+'The dark! It's full of scary shapes,' Leo whimpered.
+
+Sky hooted softly. 'The night has its own beauty, Leo. Come, let's see.' Tentatively, Leo followed Sky. Tiny fireflies blinked around them like floating jewels. The sweet scent of night flowers filled the air. 'Wow,' Leo breathed. But then, a leaf rustled loudly! Leo jumped. 'It's just the wind, little lion,' Sky explained patiently. She pointed her wing upwards. 'Look!'
+
+[IMAGE: Wise, friendly owl and timid lion cub looking up at a sky full of bright stars and fireflies over the savannah. Style: gentle, magical night illustration for ages 3-5.]
+
+Above them, the sky was filled with twinkling stars, like diamonds scattered on dark velvet. Leo stared, forgetting his fear. The night wasn't scary; it was beautiful and peaceful.
+
+'Thank you, Sky,' Leo yawned, feeling brave now. He found a soft patch of grass and curled up, watching the stars until he drifted off to sleep.
+
+[IMAGE: Contented lion cub sleeping peacefully under a starry night sky on the savannah. Style: gentle, serene bedtime illustration for ages 3-5.]
+-------------------
+2025-05-05 15:45:13,831 - INFO - Successfully extracted story with 3 image prompts.
+2025-05-05 15:45:13,831 - INFO - === PASS 6: Finalizing Story ===
+2025-05-05 15:45:13,831 - INFO - Final story prepared for saving.
+2025-05-05 15:45:13,831 - INFO - 
+--- Multi-Pass Story Generation Finished ---
+2025-05-05 15:45:13,831 - INFO - 
+Saving final story to: ../stories/story_Lily_the_lost_lamb_and_Finley__20250505_154452.md
+2025-05-05 15:45:13,831 - INFO - Story saved successfully.
+2025-05-05 15:45:13,831 - INFO - 
+Script finished.

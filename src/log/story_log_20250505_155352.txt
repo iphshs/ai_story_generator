@@ -1,0 +1,77 @@
+2025-05-05 15:53:52,711 - INFO - Attempted to load environment variables from .env file.
+2025-05-05 15:53:52,711 - INFO - Gemini API Key configured successfully.
+2025-05-05 15:53:52,711 - INFO - Gemini model 'gemini-1.5-flash' initialized.
+2025-05-05 15:53:52,711 - INFO - Starting Children's Story Generator (Multi-Pass + Gemini API)...
+2025-05-05 15:53:52,711 - INFO - Collecting user preferences...
+2025-05-05 15:53:59,218 - INFO - User provided input for 'characters': 'seymour the slug'
+2025-05-05 15:54:09,929 - INFO - User provided input for 'setting': 'gut microbiome'
+2025-05-05 15:54:16,862 - INFO - User provided input for 'theme': 'betrayal'
+2025-05-05 15:54:27,376 - INFO - User provided input for 'genre': 'harry potter fanfic'
+2025-05-05 15:54:30,651 - INFO - User provided input for 'reading_level': '6'
+2025-05-05 15:54:31,803 - INFO - User provided input for 'age_appropriate': '12'
+2025-05-05 15:54:33,903 - INFO - User provided input for 'read_aloud_time': '30'
+2025-05-05 15:54:34,734 - INFO - User provided no input for 'other_details'. Assigned random default: 'A funny misunderstanding happens.'
+2025-05-05 15:54:34,879 - INFO - User provided no input for 'avoid_content'. Assigned random default: 'predators, danger, complex words'
+2025-05-05 15:54:34,879 - INFO - Final Preferences Collected: {'characters': 'seymour the slug', 'setting': 'gut microbiome', 'theme': 'betrayal', 'genre': 'harry potter fanfic', 'reading_level': '6', 'age_appropriate': '12', 'read_aloud_time': '30', 'other_details': 'A funny misunderstanding happens.', 'avoid_content': 'predators, danger, complex words', 'story_plan': {}, 'story_plot': {}, 'draft_story': '', 'revised_story': '', 'final_story_with_prompts': '', 'image_prompts': []}
+2025-05-05 15:54:34,880 - INFO - 
+--- Starting Multi-Pass Story Generation (with Gemini API) ---
+2025-05-05 15:54:34,880 - INFO - === PASS 1: Planning Story Elements ===
+2025-05-05 15:54:34,880 - INFO - 
+--- Calling Gemini API: Plan Story Elements ---
+2025-05-05 15:54:34,880 - INFO - PROMPT:
+------
+
+    Based on the following user preferences for a children's story, outline the key elements.
+    Provide a structured JSON response containing ONLY the JSON object, no introductory text or markdown formatting.
+
+    Preferences:
+    - Characters: seymour the slug
+    - Setting: gut microbiome
+    - Theme: betrayal
+    - Genre: harry potter fanfic
+    - Age Appropriate: 12
+    - Other Details: A funny misunderstanding happens.
+    - Avoid Content: predators, danger, complex words
+
+    JSON Structure:
+    {
+      "detailed_characters": "Brief descriptions focusing on traits relevant to the theme.",
+      "setting_details": "Specific sensory details or features of the setting.",
+      "key_plot_points": ["List", "of", "3-5 bullet points", "outlining core story progression."],
+      "extra_elements": "Mention how 'other_details' can be woven in."
+    }
+    
+------
+2025-05-05 15:54:37,262 - INFO - API RESPONSE (Text):
+-------------------
+```json
+{
+  "detailed_characters": "Seymour the slug, a seemingly friendly but ultimately deceitful character.  He is slow-moving but cunning. Other characters inhabit the gut microbiome (e.g., friendly bacteria, a wise old probiotic).",
+  "setting_details": "A vibrant, bustling world within the gut; teeming with microscopic life, colorful bacteria colonies forming landscapes, food particles acting as landmarks, with a warm and moist atmosphere.",
+  "key_plot_points": [
+    "Seymour makes a deal with other beneficial bacteria promising assistance in a crucial task (e.g., defending against a virus).",
+    "Seymour secretly sabotages the bacteria's efforts through a funny misunderstanding (e.g., misinterpreting a signal or accidentally using the wrong type of enzyme).",
+    "The bacteria discover Seymour's betrayal, but instead of anger, they use humor to address the situation.",
+    "Seymour learns a lesson about honesty and the importance of teamwork.",
+    "A resolution where Seymour makes amends, perhaps even aiding the bacteria in a genuine way."
+  ],
+  "extra_elements": "The funny misunderstanding can be the core of the betrayal. Seymour's actions, though meant to be helpful, ultimately cause chaos due to a comical mishap. This creates a funny, age-appropriate resolution that avoids any sense of danger or predatory behavior."
+}
+```
+
+-------------------
+2025-05-05 15:54:37,262 - ERROR - Unexpected error during Gemini API call for 'Plan Story Elements': module 'google.generativeai.types' has no attribute 'FinishReason'
+Traceback (most recent call last):
+  File "/home/jonc/code/ai_story_generator/src/generate_ai-story_gemini3_ver5.py", line 215, in call_gemini_api
+    if candidate.finish_reason != genai.types.FinishReason.STOP:
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'google.generativeai.types' has no attribute 'FinishReason'
+2025-05-05 15:54:37,263 - ERROR - No response received from API for story planning.
+2025-05-05 15:54:37,263 - CRITICAL - Story planning failed. Cannot proceed.
+2025-05-05 15:54:37,264 - INFO - === PASS 6: Finalizing Story ===
+2025-05-05 15:54:37,264 - ERROR - Cannot finalize story - no valid story content available.
+2025-05-05 15:54:37,264 - INFO - 
+Saving final story to: ./stories/story_seymour_the_slug_20250505_155352.md
+2025-05-05 15:54:37,265 - INFO - Story saved successfully.
+2025-05-05 15:54:37,265 - INFO - 
+Script finished.

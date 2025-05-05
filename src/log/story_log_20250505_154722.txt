@@ -1,0 +1,2 @@
+2025-05-05 15:47:22,080 - WARNING - GOOGLE_API_KEY environment variable not found.
+2025-05-05 15:47:22,080 - ERROR - API Configuration Error: API Key not configured. Set the GOOGLE_API_KEY environment variable.

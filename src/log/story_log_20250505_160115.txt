@@ -1,0 +1,77 @@
+2025-05-05 16:01:15,378 - INFO - Attempted to load environment variables from .env file.
+2025-05-05 16:01:15,378 - INFO - Gemini API Key configured successfully.
+2025-05-05 16:01:15,379 - INFO - Gemini model 'gemini-1.5-flash' initialized.
+2025-05-05 16:01:15,379 - INFO - Starting Children's Story Generator (Multi-Pass + Gemini API)...
+2025-05-05 16:01:15,379 - INFO - Collecting user preferences...
+2025-05-05 16:01:16,698 - INFO - User provided no input for 'characters'. Assigned random default: 'Pip the adventurous squirrel and Barnaby the badger'
+2025-05-05 16:01:16,863 - INFO - User provided no input for 'setting'. Assigned random default: 'a spaceship exploring colorful nebulae'
+2025-05-05 16:01:17,205 - INFO - User provided no input for 'theme'. Assigned random default: 'overcoming fear of the dark'
+2025-05-05 16:01:17,412 - INFO - User provided no input for 'genre'. Assigned random default: 'mystery'
+2025-05-05 16:01:17,593 - INFO - User provided no input for 'reading_level'. Assigned random default: '2'
+2025-05-05 16:01:17,759 - INFO - User provided no input for 'age_appropriate'. Assigned random default: '3-5'
+2025-05-05 16:01:17,921 - INFO - User provided no input for 'read_aloud_time'. Assigned random default: '10'
+2025-05-05 16:01:18,274 - INFO - User provided no input for 'other_details'. Assigned random default: 'Include twinkling stars and friendly fireflies.'
+2025-05-05 16:01:18,454 - INFO - User provided no input for 'avoid_content'. Assigned random default: 'scary monsters, sadness'
+2025-05-05 16:01:18,454 - INFO - Final Preferences Collected: {'characters': 'Pip the adventurous squirrel and Barnaby the badger', 'setting': 'a spaceship exploring colorful nebulae', 'theme': 'overcoming fear of the dark', 'genre': 'mystery', 'reading_level': '2', 'age_appropriate': '3-5', 'read_aloud_time': '10', 'other_details': 'Include twinkling stars and friendly fireflies.', 'avoid_content': 'scary monsters, sadness', 'story_plan': {}, 'story_plot': {}, 'draft_story': '', 'revised_story': '', 'final_story_with_prompts': '', 'image_prompts': []}
+2025-05-05 16:01:18,454 - INFO - 
+--- Starting Multi-Pass Story Generation (with Gemini API) ---
+2025-05-05 16:01:18,454 - INFO - === PASS 1: Planning Story Elements ===
+2025-05-05 16:01:18,454 - INFO - 
+--- Calling Gemini API: Plan Story Elements ---
+2025-05-05 16:01:18,454 - INFO - PROMPT:
+------
+
+    Based on the following user preferences for a children's story, outline the key elements.
+    Provide a structured JSON response containing ONLY the JSON object, no introductory text or markdown formatting.
+
+    Preferences:
+    - Characters: Pip the adventurous squirrel and Barnaby the badger
+    - Setting: a spaceship exploring colorful nebulae
+    - Theme: overcoming fear of the dark
+    - Genre: mystery
+    - Age Appropriate: 3-5
+    - Other Details: Include twinkling stars and friendly fireflies.
+    - Avoid Content: scary monsters, sadness
+
+    JSON Structure:
+    {
+      "detailed_characters": "Brief descriptions focusing on traits relevant to the theme.",
+      "setting_details": "Specific sensory details or features of the setting.",
+      "key_plot_points": ["List", "of", "3-5 bullet points", "outlining core story progression."],
+      "extra_elements": "Mention how 'other_details' can be woven in."
+    }
+    
+------
+2025-05-05 16:01:21,434 - INFO - API RESPONSE (Text):
+-------------------
+```json
+{
+  "detailed_characters": "Pip is a brave but secretly scared squirrel, always ready for adventure but frightened of the dark. Barnaby is a calm and reassuring badger,  gentle and patient, offering comfort and support.",
+  "setting_details": "The spaceship is brightly lit inside, but outside are swirling, vibrant nebulae in pinks, purples, and blues. Millions of twinkling stars shine through the spaceship windows. Friendly fireflies flit around inside the ship.",
+  "key_plot_points": [
+    "Pip and Barnaby are on a spaceship mission exploring colorful nebulae.  A power failure plunges parts of the spaceship into darkness.",
+    "Pip becomes frightened by the sudden darkness, but Barnaby reassures him, using the ship's lights and fireflies to create a comforting atmosphere.",
+    "A mysterious noise occurs in the dark area, prompting a mystery for Pip and Barnaby to solve. They use their combined skills to investigate.",
+    "They discover the 'monster' causing the noise is actually a small, lost space-puppy that was simply crying out.",
+    "Pip overcomes his fear of the dark, helped by Barnaby and the bright lights and fireflies, and they successfully complete their mission."
+  ],
+  "extra_elements": "The twinkling stars provide a beautiful backdrop and can be used to create a sense of wonder. The fireflies can be used to light the way and symbolize hope, adding a comforting element to the dark areas of the spaceship."
+}
+```
+
+-------------------
+2025-05-05 16:01:21,434 - ERROR - Attribute error processing API response for 'Plan Story Elements': module 'google.generativeai.types' has no attribute 'Candidate'
+Traceback (most recent call last):
+  File "/home/jonc/code/ai_story_generator/src/generate_ai-story_gemini3_ver6.py", line 221, in call_gemini_api
+    if candidate.finish_reason != genai.types.Candidate.FinishReason.STOP:
+                                  ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'google.generativeai.types' has no attribute 'Candidate'
+2025-05-05 16:01:21,436 - ERROR - No response received from API for story planning or API call failed.
+2025-05-05 16:01:21,436 - CRITICAL - Story planning failed. Cannot proceed.
+2025-05-05 16:01:21,436 - INFO - === PASS 6: Finalizing Story ===
+2025-05-05 16:01:21,436 - ERROR - Cannot finalize story - no valid story content available.
+2025-05-05 16:01:21,436 - INFO - 
+Saving final story to: ../stories/story_Pip_the_adventurous_squirrel_a_20250505_160115.md
+2025-05-05 16:01:21,437 - INFO - Story saved successfully.
+2025-05-05 16:01:21,437 - INFO - 
+Script finished.

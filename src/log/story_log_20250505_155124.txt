@@ -1,0 +1,62 @@
+2025-05-05 15:51:24,632 - INFO - Attempted to load environment variables from .env file.
+2025-05-05 15:51:24,632 - INFO - Gemini API Key configured successfully.
+2025-05-05 15:51:24,632 - INFO - Gemini model 'gemini-pro' initialized.
+2025-05-05 15:51:24,632 - INFO - Starting Children's Story Generator (Multi-Pass + Gemini API)...
+2025-05-05 15:51:24,632 - INFO - Collecting user preferences...
+2025-05-05 15:51:26,001 - INFO - User provided no input for 'characters'. Assigned random default: 'Lily the lost lamb and Finley the firefly'
+2025-05-05 15:51:27,794 - INFO - User provided no input for 'setting'. Assigned random default: 'a creaky old attic filled with forgotten toys'
+2025-05-05 15:51:29,024 - INFO - User provided no input for 'theme'. Assigned random default: 'being brave even when scared'
+2025-05-05 15:51:29,737 - INFO - User provided no input for 'genre'. Assigned random default: 'science fiction'
+2025-05-05 15:51:30,306 - INFO - User provided no input for 'reading_level'. Assigned random default: '2'
+2025-05-05 15:51:30,739 - INFO - User provided no input for 'age_appropriate'. Assigned random default: '3-5'
+2025-05-05 15:51:31,151 - INFO - User provided no input for 'read_aloud_time'. Assigned random default: '10'
+2025-05-05 15:51:31,635 - INFO - User provided no input for 'other_details'. Assigned random default: 'Include twinkling stars and friendly fireflies.'
+2025-05-05 15:51:32,234 - INFO - User provided no input for 'avoid_content'. Assigned random default: 'complex family situations'
+2025-05-05 15:51:32,235 - INFO - Final Preferences Collected: {'characters': 'Lily the lost lamb and Finley the firefly', 'setting': 'a creaky old attic filled with forgotten toys', 'theme': 'being brave even when scared', 'genre': 'science fiction', 'reading_level': '2', 'age_appropriate': '3-5', 'read_aloud_time': '10', 'other_details': 'Include twinkling stars and friendly fireflies.', 'avoid_content': 'complex family situations', 'story_plan': {}, 'story_plot': {}, 'draft_story': '', 'revised_story': '', 'final_story_with_prompts': '', 'image_prompts': []}
+2025-05-05 15:51:32,235 - INFO - 
+--- Starting Multi-Pass Story Generation (with Gemini API) ---
+2025-05-05 15:51:32,235 - INFO - === PASS 1: Planning Story Elements ===
+2025-05-05 15:51:32,235 - INFO - 
+--- Calling Gemini API: Plan Story Elements ---
+2025-05-05 15:51:32,235 - INFO - PROMPT:
+------
+
+    Based on the following user preferences for a children's story, outline the key elements.
+    Provide a structured JSON response containing ONLY the JSON object, no introductory text or markdown formatting.
+
+    Preferences:
+    - Characters: Lily the lost lamb and Finley the firefly
+    - Setting: a creaky old attic filled with forgotten toys
+    - Theme: being brave even when scared
+    - Genre: science fiction
+    - Age Appropriate: 3-5
+    - Other Details: Include twinkling stars and friendly fireflies.
+    - Avoid Content: complex family situations
+
+    JSON Structure:
+    {
+      "detailed_characters": "Brief descriptions focusing on traits relevant to the theme.",
+      "setting_details": "Specific sensory details or features of the setting.",
+      "key_plot_points": ["List", "of", "3-5 bullet points", "outlining core story progression."],
+      "extra_elements": "Mention how 'other_details' can be woven in."
+    }
+    
+------
+2025-05-05 15:51:32,544 - ERROR - Google API Error during 'Plan Story Elements': 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2025-05-05 15:51:32,545 - ERROR - No response received from API for story planning.
+2025-05-05 15:51:32,545 - CRITICAL - Story planning failed. Cannot proceed.
+2025-05-05 15:51:32,545 - INFO - === PASS 6: Finalizing Story ===
+2025-05-05 15:51:32,545 - ERROR - Cannot finalize story - no valid story content available.
+2025-05-05 15:51:32,545 - INFO - 
+Saving final story to: ./stories/story_Lily_the_lost_lamb_and_Finley__20250505_155124.md
+2025-05-05 15:51:32,545 - INFO - Story saved successfully.
+2025-05-05 15:51:32,545 - INFO - 
+Script finished.
