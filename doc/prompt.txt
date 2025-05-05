@@ -1,0 +1,48 @@
+Generate a python program genai_childrens_story.py that meets these spec:
+
+1. it asks the use the following series of core narrative question about the children's story they want to generate:
+
+- who are the characters (e.g. a clever racoon, young girl, a superhero, etc)
+
+- what is the setting (e.g. a school, on an island, enchanted forest, space, etc)
+
+- what is the theme (e.g. honesty, friendship, etc)
+
+- what is genre (e.g. adventure, mystery, fantasy, etc)
+
+- self reading level by grade level
+
+- age-appropriate content
+
+- estimate read aloud time (bedtime story 5-30mins)
+
+- any other details
+
+- any content to avoid
+
+2. based upon answers to question #1, generate a entertaining but subtly intellectually engaging story
+
+3. for key scenes and space evenly though the story generated embedded text-to-image prompts as placeholders which corresponding images should go
+
+4. use the following multi-agent framework in a multi-agent debate/pipeline of N_TURNS=5 to synthesize the best story possible based upon these specialized agents: storyteller, character designer, world builder, dialog coach, children linguist to ensure flow/age/flow/rhyme/etc elements of language, conceptual children illustrator, visual design editor, final preprint editor, and any other essential roles that you can think of
+
+
+
+=====
+
+
+Revise this to remove all agent and interagent dialog and just provide several passes to
+
+- plan the story element
+
+- plot the overall narrative
+
+- fleshout the entire story
+
+- review/revise as necessary for coherence, character believability, etc (repeat if necessary)
+
+- identify key scences where illustrations would be useful evenly spaced throught the story and insert text-to-image prompts there
+
+- finalial and wite out the final story to ./stories
+
+DURING ALL these multiple passes over the story to refine / revise it, echo to the terminal all the prompts and responses for each Gemini API call (at least one for each step above)   

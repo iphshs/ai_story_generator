@@ -1,0 +1,44 @@
+Starting Children's Story Generator...
+Collecting user preferences...
+User Preferences Received: {'characters': 'superdude', 'setting': 'underground mole tunnels', 'theme': 'madness', 'genre': 'psychothriller', 'reading_level': '3', 'age_appropriate': '6', 'read_aloud_time': '10', 'other_details': 'happy happy joy joy', 'avoid_content': 'murder death kill', 'story_elements': {}, 'image_prompts': []}
+
+--- Starting Agent Pipeline ---
+
+--- Turn 1/10 | Agent: Storyteller ---
+Error during agent Storyteller turn: name 'current_state' is not defined
+
+--- Turn 2/10 | Agent: Character Designer ---
+Error during agent Character Designer turn: name 'current_state' is not defined
+
+--- Turn 3/10 | Agent: World Builder ---
+Error during agent World Builder turn: name 'current_state' is not defined
+
+--- Turn 4/10 | Agent: Conceptual Illustrator 1 ---
+Error during agent Conceptual Illustrator 1 turn: name 'current_state' is not defined
+
+--- Turn 5/10 | Agent: Dialog Coach ---
+Error during agent Dialog Coach turn: name 'current_state' is not defined
+
+--- Turn 6/10 | Agent: Children Linguist ---
+Error during agent Children Linguist turn: name 'current_state' is not defined
+
+--- Turn 7/10 | Agent: Storyteller - Middle ---
+Error during agent Storyteller - Middle turn: name 'current_state' is not defined
+
+--- Turn 8/10 | Agent: Conceptual Illustrator 2 ---
+Error during agent Conceptual Illustrator 2 turn: name 'current_state' is not defined
+
+--- Turn 9/10 | Agent: Visual Design Editor ---
+**Visual Design Editor:** Reviewing image prompts for consistency and appeal.
+[Reviewing visual prompts]
+
+--- Turn 10/10 | Agent: Final Preprint Editor ---
+**Final Preprint Editor:** Final story compiled and reviewed. Ready for output.
+[Final story stored in current_state['final_story']]
+
+--- Agent Pipeline Finished ---
+
+Saving final story to: ./stories/story_superdude_20250505_150147.md
+Story saved successfully.
+
+Script finished.

@@ -1,0 +1,46 @@
+Starting Children's Story Generator...
+Collecting user preferences...
+Using default preferences.
+Default Preferences: {'characters': 'Pip the adventurous squirrel', 'setting': 'a bustling city park', 'theme': 'curiosity and discovery', 'genre': 'gentle adventure', 'reading_level': '1', 'age_appropriate': '4-6', 'read_aloud_time': '7', 'other_details': 'Include a friendly dog character.', 'avoid_content': 'scary monsters, sadness', 'story_elements': {'scenes': [], 'character_notes': [], 'setting_details': [], 'dialogue': []}, 'image_prompts': []}
+
+--- Starting Agent Pipeline ---
+Running pipeline for 10 turns out of 12 defined steps.
+
+--- Turn 1/10 | Agent: Storyteller - Opening ---
+**Storyteller - Opening:** Drafted 'Scene 1: In the a bustling city park, Pip the adve...'
+
+--- Turn 2/10 | Agent: Character Designer ---
+**Character Designer:** Added character note: 'Note: Pip the adventurous squirrel shows curiosity...'
+
+--- Turn 3/10 | Agent: World Builder ---
+**World Builder:** Added setting detail: 'Detail: The a bustling city park has a unique feat...'
+
+--- Turn 4/10 | Agent: Conceptual Illustrator 1 ---
+**Conceptual Illustrator 1:** Suggested image prompt: '[IMAGE: A gentle adventure style illustration for age 4-6: S...'
+
+--- Turn 5/10 | Agent: Dialog Coach 1 ---
+**Dialog Coach 1:** Crafted dialogue snippet: 'Dialogue Snippet: 'Pip the adventurous squirrel' s...'
+
+--- Turn 6/10 | Agent: Children Linguist Review 1 ---
+**Children Linguist Review 1:** Reviewed language for grade 1 and flow. Avoided: 'scary monsters, sadness'. Looks okay.
+
+--- Turn 7/10 | Agent: Storyteller - Middle ---
+**Storyteller - Middle:** Drafted 'Scene 2: In the a bustling city park, Pip the adve...'
+
+--- Turn 8/10 | Agent: Conceptual Illustrator 2 ---
+**Conceptual Illustrator 2:** Suggested image prompt: '[IMAGE: A gentle adventure style illustration for age 4-6: S...'
+
+--- Turn 9/10 | Agent: Dialog Coach 2 ---
+**Dialog Coach 2:** Crafted dialogue snippet: 'Dialogue Snippet: 'Pip the adventurous squirrel' s...'
+
+--- Turn 10/10 | Agent: Final Preprint Editor (Final Turn) ---
+Final Preprint Editor: Assembling the final story...
+Final Preprint Editor: Successfully assembled final story.
+**Final Preprint Editor:** Compiled final story from elements, added prompts, and performed final review.
+
+--- Agent Pipeline Finished ---
+
+Saving final story to: ./stories/story_Pip_the_adventurous_squirrel_20250505_150814.md
+Story saved successfully.
+
+Script finished.
